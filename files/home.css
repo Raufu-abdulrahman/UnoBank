@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+.navbar{
+    width: 100%;
+    /* padding: 5px 0px  0px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 0px 30px;
+    padding-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.logo{
+    width: 50%;
+    font-weight: 1000px;
+}
+.logo a{
+    color: black;
+}
+span{
+    color: rgb(82, 49, 207);
+}
+.center-div{
+    display: flex;
+    align-content: center;
+    width: 80%;
+    justify-content: center;
+}
+.center-div a, .login a{
+    color: black;
+}
+.right-div{
+    display: flex;
+    align-content: center;
+    width: 80%;
+    justify-content: right;
+}
+
+.login{
+    border-radius: 10px;
+    background: none;
+    margin-right: 15px;
+    width: 70px;
+}
+.register{
+    background-color: black;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: white;
+    width: 80px;
+    height: 30px;
+}
+.register a{
+    color: white;
+}
+li, a{
+    list-style-type: none;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+#hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.mr-auto{
+    align-items: center;
+    align-content: center;
+    width: 600px;
+    margin-right: 40px;
+}
+.hero-header{
+    font-size: 48px;
+    font-weight: 900;
+}
+.hero-text{
+    padding-bottom: 10px;
+}
+.ml-auto{
+    width: 500px;
+    height: 500px;
+    background-image: url('girl.jpg');
+    background-position: center;
+    background-size: cover;
+    align-content: center;
+    border-radius: 50%;
+}
+
+#banking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+    background-color: #f9f9f9;
+}
+.banking-left{
+    padding-left: 20px;
+    width: 500px;
+    height: 500px;
+    align-content: center;
+    margin-left: 350px;
+    margin-right: 60px;
+}
+.banking-img {
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+
+.box {
+    width: 400px; 
+    height: 400px;
+    background-image: url('bank.jpg'); 
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%; 
+    position: relative; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.bubble, .bubble1 {
+    position: absolute; 
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    background: rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.bubble {
+    width: 90px;
+    height: 90px;
+    top: -30px; 
+    left: 300px; 
+}
+
+.bubble1 {
+    width: 80px;
+    height: 80px;
+    bottom: -35px; 
+    right: 280px; 
+}
+.banking-right{
+    width: 700px;
+    margin-right: 300px;
+}
+.banking-header{
+    font-size: 48px;
+    font-weight: 900;
+}
+.banking-text{
+    padding-bottom: 10px;
+}
+
+
+.features-section {
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #333; 
+}
+
+.features-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea; 
+}
+
+.feature-item:last-child {
+    border-bottom: none; 
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #007bff; 
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6f0ff; 
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+}
+.feature-text h3 {
+    font-size: 1.25rem;
+    color: #333; 
+    margin: 0;
+}
+
+.feature-text p {
+    font-size: 0.9rem;
+    color: #666; 
+    margin: 5px 0 0;
+}
+
+#why{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+.img-container{
+    width: 500px;
+    height: 500px;
+    background-image: url('why.jpg');
+    background-position: center;
+    background-size: cover;
+    align-content: center;
+}
+.why-right{
+    align-items: center;
+    align-content: center;
+    width: 600px;
+    margin-left: 60px;
+}
+.why-right h2{
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #333; 
+}
+.why-right p{
+    font-size: 0.9rem;
+    color: #666; 
+    margin: 5px 0 0;
+    padding-bottom: 10px;
+}
+.why-right button{
+    background-color: rgb(82, 49, 207);
+    border-radius: 15px;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-right: 15px;    
+}
+
+#cta{
+    padding-bottom: 70px;
+    padding-top: 50px;
+    color: #F9FAF8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cta-container{
+    margin: 0 auto;
+    width: 900px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(82, 49, 207);
+    border-radius: 15px;
+}
+.text{
+    padding-left: 40px;
+    width: 500px;
+    margin-right: 200px;
+}
+.cta-body{
+    font-size: smaller;
+}
+.button{
+    width:200px;
+}
+.sign-up{
+    border: 1px solid #F9FAF8;
+    background-color: rgb(82, 49, 207);
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 2px;
+    color: #F9FAF8;
+    align-items: right;
+}
+
+/* Footer */
+footer{
+    background-color: #f9f9f9;
+    color: black;
+    height: 60px;
+}
+.footer{
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: small;
+}
