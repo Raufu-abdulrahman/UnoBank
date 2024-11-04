@@ -1,0 +1,55 @@
+{% extends "../base.html" %}
+
+{% load static %}
+{% block title %}  <title>Login - UnoBank</title> {% endblock title %}
+    
+{% block styles %}  <link rel="stylesheet" href="{% static "css/login.css" %}"> {% endblock styles %}
+    
+{% block content %}
+
+    <div class="navbar">
+        <i class="fa-brands fa-drupal"></i>
+        <h3 class="logo"><span>U</span>noBank.</a></h3>
+    </div>
+
+    <div class="container">
+        <h1 class="header">Welcome back</h1>
+
+        <form action="" class="form" method="post">
+            {% csrf_token %}
+            <div class="input-container">
+                {{loginform.username}}
+                <label>Username*</label>
+            </div>  
+            <div class="input-container">
+                {{loginform.password}}
+                <label>Password*</label>
+            </div>             
+            <button class="submit" type="submit">Continue</button>
+            <p>Don't have an account?<a class="green" href="{% url "register1" %}"> Sign Up</a></p>
+        </form>
+
+        <div class="or-container">
+            <hr class="left-hr">
+            <span class="or-text">OR</span>
+            <hr class="right-hr">
+        </div>
+        
+        <div class="sign">
+            <div class="box">
+                <i class=" icon fa-brands fa-google"></i>
+                <a href="">Continue with Google</a>
+            </div>
+            <div class="box">
+                <i class="icon fa-brands fa-microsoft"></i>
+                <a href="">Continue with Microsoft Account</a>
+            </div>
+            <div class="box">
+                <i class="icon fa-brands fa-apple"></i>
+                <a href="">Continue with Apple</a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}
