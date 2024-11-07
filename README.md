@@ -1,2 +1,2 @@
 # UnoBank
-UnoBank - Your partner for life
+UnoBank - Your Banking partner for life
