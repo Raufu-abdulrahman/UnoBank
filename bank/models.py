@@ -12,10 +12,10 @@ from django.utils.translation import gettext_lazy as _
 class CustomUser(AbstractUser):
     
     AVATAR_CHOICES = [
-        ('avatar1.png', 'Avatar 1'),
-        ('avatar2.png', 'Avatar 2'),
-        ('avatar3.png', 'Avatar 3'),
-        ('avatar4.png', 'Avatar 4')
+        ('avatars/avatar1.jpg', 'Avatar 1'),
+        ('avatars/avatar2.jpg', 'Avatar 2'),
+        ('avatars/avatar3.jpg', 'Avatar 3'),
+        ('avatars/avatar4.jpg', 'Avatar 4')
     ]
     
     username = models.CharField(max_length=255, unique=True)
@@ -29,9 +29,8 @@ class CustomUser(AbstractUser):
     )
     address = models.TextField(blank=True, null=True, verbose_name=("Address"))
     balance = models.DecimalField(max_digits=15, decimal_places=2, default=0.00, verbose_name="Balance")
-    avatar = models.CharField(
-        max_length=50, choices = AVATAR_CHOICES, default='avatar1.png', verbose_name='Avatar'
-    )
+    pin = models.CharField(max_length=4, default=1234)
+    avatar = models.CharField(max_length=100, choices=AVATAR_CHOICES, blank=True, default='avatars/avatar1.jpg')
     
     groups = models.ManyToManyField(
         Group,
@@ -60,4 +59,18 @@ def _post_save_receiver(sender, instance, **kwargs):
     if not instance.account_number:
         instance.account_number = instance.gen_account_number()
         
+
+class Deposit(models.Model):
+    amount = models.DecimalField(max_digits=8, decimal_places=2, default=0.00, verbose_name="Amount")
+    pin = models.CharField(max_length=4)
+    
+    
+class Withdrawal(models.Model):
+    amount = models.DecimalField(max_digits=8, decimal_places=2, default=0.00, verbose_name="Amount")
+    pin = models.CharField(max_length=4)
+    
+class Transfer(models.Model):
+    account_number = models.CharField(max_length=8, verbose_name='Account Number')
+    amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Amount')
+    pin = models.CharField(max_length=4)
     

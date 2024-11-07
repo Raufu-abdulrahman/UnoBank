@@ -14,26 +14,34 @@
     <div class="container">
         <h1 class="header">Just A Little More</h1>
 
-        <form action="{% url "register2" %}" class="form" method="post">
-            {% comment %} <div class="input-container">
-                <input type="name" required>
-                <label>Username*</label>
-            </div> 
-            <div class="input-container">
-                <input type="email" required>
-                <label>Email address*</label>
-            </div>  
-            <div class="input-container">
-                <input type="password" required>
-                <label>Password*</label>
-            </div>  
-            <div class="input-container">
-                <input type="password" required>
-                <label>Confirm Password*</label>
-            </div>             {% endcomment %}
-
+        <form action="{% url "register2" %}" class="form" method="post" type="multipart/form-data">
             {% csrf_token %}
-            {{profileform.as_p}}
+            <div class="input-container">
+                {{profileform.phone_number}}
+                <label>Phone Number*</label>
+            </div>
+            <div class="input-container">
+                {{profileform.address}}
+                <label>Address*</label>
+            </div>
+
+            
+
+            
+            <h2>Select Your Avatar</h2>
+            <div class="avatar-selection">
+                {% for avatar in avatars %}
+                    <div class="avatar-option">
+                        <input type="radio" name="avatar" value="{{ avatar }}">
+                        <img src="{% static avatar %}" alt="Avatar" class="avatar-img">
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        
+            
+
             <button class="submit" type="submit">Register</button>
             <p>Already have an account? <a class="green" href="login.html">Log In</a></span></p>
         </form>

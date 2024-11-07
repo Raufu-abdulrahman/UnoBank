@@ -47,25 +47,7 @@ span{
     justify-content: right;
 }
 
-.login{
-    border-radius: 10px;
-    background: none;
-    margin-right: 15px;
-    width: 70px;
-}
-.register{
-    background-color: black;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    color: white;
-    width: 80px;
-    height: 30px;
-}
-.register a{
-    color: white;
-}
+
 li, a{
     list-style-type: none;
     padding: 0px 10px;
@@ -97,7 +79,7 @@ li, a{
 .ml-auto{
     width: 500px;
     height: 500px;
-    background-image: url('girl.jpg');
+    background-image: url('../img/girl.jpg');
     background-position: center;
     background-size: cover;
     align-content: center;
@@ -128,7 +110,7 @@ li, a{
 .box {
     width: 400px; 
     height: 400px;
-    background-image: url('bank.jpg'); 
+    background-image: url('../img/bank.jpg'); 
     background-position: center;
     background-size: cover;
     border-radius: 50%; 
@@ -241,7 +223,7 @@ li, a{
 .img-container{
     width: 500px;
     height: 500px;
-    background-image: url('why.jpg');
+    background-image: url('../img/why.jpg');
     background-position: center;
     background-size: cover;
     align-content: center;
@@ -313,6 +295,10 @@ li, a{
     color: #F9FAF8;
     align-items: right;
 }
+.sign-up a{
+    color: #F9FAF8;
+    text-decoration: none;
+}
 
 /* Footer */
 footer{
@@ -325,4 +311,43 @@ footer{
     text-align: center;
     margin: 0 auto;
     font-size: small;
+}
+
+/* Profile picture styling */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 70px; /* Positioning below the profile picture */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
 }

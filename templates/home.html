@@ -1,24 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
     <title>UnoBank - Your Banking Partner for Life</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
+{% endblock title %}
     
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock styles %}
+    
+{% block content %}
+
     <nav class="navbar">
         <ul class="container">
-            <h3 class="logo"><a href="index.html"><span>U</span>noBank.</a></h3>
+            <h3 class="logo"><a href="{% url "index" %}"><span>U</span>noBank.</a></h3>
             <div class="center-div">
-                <li><a href="">Banking</a></li>
+                <li><a href="{% url "banking" %}">Banking</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">Card</a></li>
             </div>
             <div class="right-div">
-                <button class="login" type="submit"><a href="login.html">Login</a></button>
-                <button class="register" type='submit'><a href="register.html">Sign Up</a></button>
+
+                <div class="profile-container">
+                    <!-- Profile picture that toggles the dropdown -->
+                    <img src="{% static user.avatar %}" alt="Profile Picture" class="profile-picture" onclick="toggleDropdown()">
+                    
+                    <!-- Dropdown menu -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <a href="/profile">View Profile</a>
+                        <a href="">Account - {{user.account_number}}</a>
+                        <a href="">Balance - ${{user.balance}}</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+
             </div>
             
         </ul>
@@ -32,7 +48,7 @@
                 offering tools to help you track spending, set goals, 
                 and grow your wealth – all in one secure place.
             </p>
-               <!-- <button class="btn"><a href="">Sign Up</a></button> -->
+            <!-- <button class="btn"><a href="">Sign Up</a></button> -->
         </div>
         <div class="ml-auto"></div>
     </section>
@@ -99,8 +115,8 @@
         <div class="why-right">
             <h2>Why Choose <span>U</span>noBank?</h2>
             <p>From quick and easy setup to personalized financial advice, 
-               <span>U</span>nobank is designed to support you at every stage of your financial journey. 
-               Join us and experience a new way of banking that’s fast, modern, and user-focused.
+            <span>U</span>nobank is designed to support you at every stage of your financial journey. 
+            Join us and experience a new way of banking that’s fast, modern, and user-focused.
             </p>
             <button type="submit"><a style="color: white;" href="#">Get Started</a></button>
         </div>
@@ -122,6 +138,7 @@
         <p class="footer">Copyright &copy; Koded 2024</p>
     </footer>
 
+    <script src="{% static "js/scripts.js" %}"></script>
 
-</body>
-</html>
+{% endblock content %}
+    

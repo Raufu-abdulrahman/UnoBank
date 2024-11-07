@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>UnoBank - Your Banking Partner for Life</title>
+{% endblock title %}
+    
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock styles %}
+    
+{% block content %}
+
+    <nav class="navbar">
+        <ul class="container">
+            <h3 class="logo"><a href="{% url "index" %}"><span>U</span>noBank.</a></h3>
+            <div class="center-div">
+                <li><a href="{% url "banking" %}">Banking</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Card</a></li>
+            </div>
+            <div class="right-div">
+
+                <div class="profile-container">
+                    <!-- Profile picture that toggles the dropdown -->
+                    <img src="{% static user.avatar %}" alt="Profile Picture" class="profile-picture" onclick="toggleDropdown()">
+                    
+                    <!-- Dropdown menu -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <a href="/profile">View Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="">Balance - ${{user.balance}}</a>
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </ul>
+    </nav>
+
+    <h2>Transfer Funds</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ transferform.as_p }}
+        <button type="submit">Transfer</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock content %}

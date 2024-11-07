@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>UnoBank - Your Banking Partner for Life</title>
+{% endblock title %}
+    
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/banking.css" %}">
+{% endblock styles %}
+    
+{% block content %}
+
+    <nav class="navbar">
+        <ul class="container">
+            <h3 class="logo"><a href="{% url "index" %}"><span>U</span>noBank.</a></h3>
+            <div class="center-div">
+                <li><a href="{% url "banking" %}">Banking</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Card</a></li>
+            </div>
+            <div class="right-div">
+
+                <div class="profile-container">
+                    <!-- Profile picture that toggles the dropdown -->
+                    <img src="{% static user.avatar %}" alt="Profile Picture" class="profile-picture" onclick="toggleDropdown()">
+                    
+                    <!-- Dropdown menu -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <a href="/profile">View Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="">Balance - ${{user.balance}}</a>
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <h2 class="hero-header">Banking Made Simple with <span>U</span>noBank</h2>
+        <p>Welcome to UnoBank, where we redefine what it means to bank with simplicity, speed, and security. 
+            At UnoBank, we believe that managing your finances should be stress-free, accessible, and empowering.
+            With our user-first approach, advanced technology, and transparent services,
+            UnoBank is here to make every transaction seamless and every goal within reach.
+        </p>
+    </section>
+
+    <section id="banking-options">
+        <div class="box">
+            <h3>Deposit</h3>
+            <p>A deposit is the act of adding funds to your account, increasing the available balance. 
+                This transaction can be made in cash, via bank transfer, or other payment methods.
+            </p>
+            <button><a href="{% url "deposit" %}">Deposit</a></button>
+        </div>
+        <div class="box">
+            <h3>Transfer</h3>
+            <p>
+                A transfer is the movement of funds from one account to another, either within the same bank or across different banks.
+                 This transaction is used to send money securely to others or between personal accounts.
+            </p>
+            <button><a href="{% url "transfer" %}">Transfer</a></button>
+        </div>
+        <div class="box">
+            <h3>Withdrawal</h3>
+            <p>
+                A withdrawal involves taking funds out of your account, reducing the available balance. 
+                This can be done through ATMs, bank branches, or electronic transfers.
+            </p>
+            <button><a href="{% url "withdraw" %}">Withdraw</a></button>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer">Copyright &copy; Koded 2024</p>
+    </footer>
+
+    <script src="{% static "js/scripts.js" %}"></script>
+
+{% endblock content %}
+    

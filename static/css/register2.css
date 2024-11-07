@@ -21,23 +21,23 @@
 }
 
 .container{
-    width: 500px;
-    
-    margin: 0 auto;
+    width: 500px !important;
+    text-align: center;
+    margin: 0 auto !important;
 }
 .header{
     margin-bottom: 20px;
     text-align: center;
 }
 .form{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 300px !important;
+    margin: 0 auto !important;
 }
 
 .input-container {
-    position: relative;
+    position: relative !important;
 }
 .address{
     margin-bottom: 10px;
@@ -54,7 +54,7 @@ input {
     background: transparent;
 }
 label {
-    position: absolute;
+    position: absolute !important;
     top: 8px;
     left: 10px; 
     font-size: 16px;
@@ -132,7 +132,46 @@ input:focus {
 .box i{
     margin-right: 8px;
 }
-
 a{
     text-decoration: none;
 }
+
+
+.avatar-selection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-option input[type="radio"] {
+    margin-bottom: 5px;
+}
+
+.avatar-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.avatar-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected avatar styling (optional for visual feedback) */
+input[type="radio"]:checked + .avatar-img {
+    border: 3px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

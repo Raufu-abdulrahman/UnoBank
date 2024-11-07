@@ -15,23 +15,6 @@
         <h1 class="header">Sign Up Here</h1>
 
         <form method="post" class="form" action="{% url 'register1' %}">
-            {% comment %} <div class="input-container">
-                <input type="name" required>
-                <label>Username*</label>
-            </div> 
-            <div class="input-container">
-                <input type="email" required>
-                <label>Email address*</label>
-            </div>  
-            <div class="input-container">
-                <input type="password" required>
-                <label>Password*</label>
-            </div>  
-            <div class="input-container">
-                <input type="password" required>
-                <label>Confirm Password*</label>
-            </div>             {% endcomment %}
-
             {% csrf_token %}
             <div class="input-container">
                 {{accountform.username}}
@@ -44,6 +27,10 @@
             <div class="input-container">
                 {{accountform.password}}
                 <label>Password*</label>
+            </div>
+            <div class="input-container">
+                {{accountform.pin}}
+                <label>PIN*</label>
             </div>
             <button class="submit" type="submit">Continue</button>
             <p>Already have an account? <a class="green" href="{% url "login" %}">Log In</a></span></p>
@@ -71,6 +58,13 @@
         </div>
 
     </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const form = document.querySelector('form');
+            form.reset();
+        });
+    </script>
 
     {% endblock content %}
 
